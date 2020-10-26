@@ -1,8 +1,8 @@
 # ipquery
 
 This project contains two binaries.  One is a picoservice to tell you
-what your IP address is.  The other is a utility to set your Network
-ACL.
+what your IP address is.  The other is a utility to update your
+Network ACL on AWS.
 
 This is useful if you do not have a fixed IP address and you
 periodically need to update your network ACL to reflect your current
