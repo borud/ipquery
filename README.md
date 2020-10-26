@@ -8,6 +8,12 @@ This is useful if you do not have a fixed IP address and you
 periodically need to update your network ACL to reflect your current
 IP address.
 
+## Installing
+
+You can install the update-acl utility by issuing the following command:
+
+    go get -u github.com/borud/ipquery/cmd/update-acl
+
 ## update-acl
 
 Update ACL figures out what your externally visible IP address is by
