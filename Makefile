@@ -1,7 +1,10 @@
-all: ipquery
+all: ipquery update-acl
 
 ipquery:
 	@cd cmd/ipquery && go build -o ../../bin/ipquery
+
+update-acl:
+	@cd cmd/update-acl && go build -o ../../bin/update-acl
 
 clean:
 	@rm -rf bin
