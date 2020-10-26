@@ -1,0 +1,24 @@
+[Unit]
+Description=ipquery - simple service for telling people what their IP is
+Documentation=https://github.com/borud/ipquery/blob/master/README.md
+After=network.target
+
+[Service]
+User=nobody
+Group=www-data
+Type=simple
+PIDFile=/usr/local/ipquery/run/ipquery.pid
+ExecStart=/sbin/start-stop-daemon --quiet --start --pidfile /usr/local/ipquery/run/ipquery.pid --make-pidfile --exec /usr/local/ipquery/bin/ipquery
+ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --remove-pidfile --pidfile /usr/local/ipquery/run/ipquery.pid
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=ipquery
+TimeoutStopSec=5
+KillMode=mixed
+Restart=always
+
+[Path]
+PathExists=/usr/local/nconf
+
+[Install]
+WantedBy=multi-user.target
